@@ -18,13 +18,27 @@ public class CalcularValorFinalVendaUseCase {
     }
     
     public Double execute(Long numVenda) {
-        Optional<Venda> vendaOpt = vendaRepository.findById(numVenda);
+        Optional<Venda> vendaOpt = vendaRepository.findByIdWithRelations(numVenda);
         
         if (vendaOpt.isEmpty()) {
             return -1.0;
         }
         
         Venda venda = vendaOpt.get();
+        
+        // Validações para evitar NullPointerException
+        if (venda.getTecnologia() == null) {
+            throw new RuntimeException("Venda " + numVenda + " não possui tecnologia associada");
+        }
+        
+        if (venda.getTecnologia().getFornecedor() == null) {
+            throw new RuntimeException("Tecnologia da venda " + numVenda + " não possui fornecedor associado");
+        }
+        
+        if (venda.getComprador() == null) {
+            throw new RuntimeException("Venda " + numVenda + " não possui comprador associado");
+        }
+        
         Double valorBase = venda.getTecnologia().getValorBase();
         Area area = venda.getTecnologia().getFornecedor().getArea();
         

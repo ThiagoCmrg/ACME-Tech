@@ -11,12 +11,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/acmetech/vendas/1/valorfinal",
-					"protocol": "http",
+					"raw": "https://organic-xylophone-69g54g55q7pxhxrqj-8080.app.github.dev/acmetech/vendas/1/valorfinal",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"organic-xylophone-69g54g55q7pxhxrqj-8080",
+						"app",
+						"github",
+						"dev"
 					],
-					"port": "8080",
 					"path": [
 						"acmetech",
 						"vendas",
@@ -34,12 +36,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/acmetech/vendas/2/valorfinal",
-					"protocol": "http",
+					"raw": "https://organic-xylophone-69g54g55q7pxhxrqj-8080.app.github.dev/acmetech/vendas/2/valorfinal",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"organic-xylophone-69g54g55q7pxhxrqj-8080",
+						"app",
+						"github",
+						"dev"
 					],
-					"port": "8080",
 					"path": [
 						"acmetech",
 						"vendas",
@@ -57,12 +61,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/acmetech/vendas/3/valorfinal",
-					"protocol": "http",
+					"raw": "https://organic-xylophone-69g54g55q7pxhxrqj-8080.app.github.dev/acmetech/vendas/3/valorfinal",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"organic-xylophone-69g54g55q7pxhxrqj-8080",
+						"app",
+						"github",
+						"dev"
 					],
-					"port": "8080",
 					"path": [
 						"acmetech",
 						"vendas",
@@ -80,12 +86,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/acmetech/vendas/4/valorfinal",
-					"protocol": "http",
+					"raw": "https://organic-xylophone-69g54g55q7pxhxrqj-8080.app.github.dev/acmetech/vendas/4/valorfinal",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"organic-xylophone-69g54g55q7pxhxrqj-8080",
+						"app",
+						"github",
+						"dev"
 					],
-					"port": "8080",
 					"path": [
 						"acmetech",
 						"vendas",
@@ -103,12 +111,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/acmetech/vendas/5/valorfinal",
-					"protocol": "http",
+					"raw": "https://organic-xylophone-69g54g55q7pxhxrqj-8080.app.github.dev/acmetech/vendas/5/valorfinal",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"organic-xylophone-69g54g55q7pxhxrqj-8080",
+						"app",
+						"github",
+						"dev"
 					],
-					"port": "8080",
 					"path": [
 						"acmetech",
 						"vendas",
@@ -126,12 +136,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/acmetech/vendas/6/valorfinal",
-					"protocol": "http",
+					"raw": "https://organic-xylophone-69g54g55q7pxhxrqj-8080.app.github.dev/acmetech/vendas/6/valorfinal",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"organic-xylophone-69g54g55q7pxhxrqj-8080",
+						"app",
+						"github",
+						"dev"
 					],
-					"port": "8080",
 					"path": [
 						"acmetech",
 						"vendas",
@@ -149,12 +161,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/acmetech/vendas/999/valorfinal",
-					"protocol": "http",
+					"raw": "https://organic-xylophone-69g54g55q7pxhxrqj-8080.app.github.dev/acmetech/vendas/999/valorfinal",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"organic-xylophone-69g54g55q7pxhxrqj-8080",
+						"app",
+						"github",
+						"dev"
 					],
-					"port": "8080",
 					"path": [
 						"acmetech",
 						"vendas",
