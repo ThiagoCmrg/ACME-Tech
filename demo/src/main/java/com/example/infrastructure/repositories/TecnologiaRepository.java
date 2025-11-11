@@ -1,5 +1,5 @@
 package com.example.infrastructure.repositories;
 
-public interface FornecedorRepository {
+public interface TecnologiaRepository {
     
 }
