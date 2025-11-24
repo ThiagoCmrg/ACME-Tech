@@ -13,6 +13,7 @@ import com.example.application.DTO.TecnologiaRequestDTO;
 import com.example.application.usecases.TecnologiaUseCase.GetAllTecnologiasUseCase;
 import com.example.application.usecases.TecnologiaUseCase.GetTecnologiaUseCase;
 import com.example.application.usecases.TecnologiaUseCase.GetTecnologiasPeloFornecedorUseCase;
+import com.example.application.usecases.TecnologiaUseCase.GetTecnologiasPorPesoLibrasUseCase;
 import com.example.application.usecases.TecnologiaUseCase.GetTecnologiasPorTemperaturaFahrenheitUseCase;
 import com.example.application.usecases.TecnologiaUseCase.PostCadastrarTecnologiaUseCase;
 import com.example.domain.entities.Tecnologia;
@@ -27,13 +28,16 @@ public class TecnologiaController {
     private final GetTecnologiasPeloFornecedorUseCase getTecnologiasPeloFornecedorUseCase;
     private final PostCadastrarTecnologiaUseCase postCadastrarTecnologiaUseCase;
     private final GetTecnologiasPorTemperaturaFahrenheitUseCase getTecnologiasPorTemperaturaFahrenheitUseCase;
+    private final GetTecnologiasPorPesoLibrasUseCase getTecnologiasPorPesoLibrasUseCase;
 
-    public TecnologiaController(GetTecnologiaUseCase getTecnologiaUseCase, GetAllTecnologiasUseCase getAllTecnologiasUseCase, GetTecnologiasPeloFornecedorUseCase getTecnologiasPeloFornecedorUseCase, PostCadastrarTecnologiaUseCase postCadastrarTecnologiaUseCase, GetTecnologiasPorTemperaturaFahrenheitUseCase getTecnologiasPorTemperaturaFahrenheitUseCase) {
+    public TecnologiaController(GetTecnologiaUseCase getTecnologiaUseCase, GetAllTecnologiasUseCase getAllTecnologiasUseCase, GetTecnologiasPeloFornecedorUseCase getTecnologiasPeloFornecedorUseCase, PostCadastrarTecnologiaUseCase postCadastrarTecnologiaUseCase, GetTecnologiasPorTemperaturaFahrenheitUseCase getTecnologiasPorTemperaturaFahrenheitUseCase, GetTecnologiasPorPesoLibrasUseCase getTecnologiasPorPesoLibrasUseCase
+    ) {
         this.getTecnologiaUseCase = getTecnologiaUseCase;
         this.getAllTecnologiasUseCase = getAllTecnologiasUseCase;
         this.getTecnologiasPeloFornecedorUseCase = getTecnologiasPeloFornecedorUseCase;
         this.postCadastrarTecnologiaUseCase = postCadastrarTecnologiaUseCase;
         this.getTecnologiasPorTemperaturaFahrenheitUseCase = getTecnologiasPorTemperaturaFahrenheitUseCase;
+        this.getTecnologiasPorPesoLibrasUseCase = getTecnologiasPorPesoLibrasUseCase;
     }
 
     @GetMapping("/buscatecnologia/{id}")
@@ -59,6 +63,11 @@ public class TecnologiaController {
     @GetMapping("/tecnologias/temperatura")
     public List<Tecnologia> listarPorTemperatura(@RequestParam double fahrenheit) {
         return getTecnologiasPorTemperaturaFahrenheitUseCase.execute(fahrenheit);
+    }
+
+    @GetMapping("/tecnologias/peso")
+    public List<Tecnologia> getTecnologiasPorPeso(@RequestParam double pesoLibras) {
+        return getTecnologiasPorPesoLibrasUseCase.execute(pesoLibras);
     }
     
 }
