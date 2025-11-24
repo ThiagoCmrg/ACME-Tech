@@ -48,7 +48,7 @@ public class TecnologiaController {
     }
 
     @PostMapping("/cadastrartecnologia")
-    public boolean cadastrar(@RequestBody TecnologiaRequestDTO dto) {
+    public boolean cadastrarTecnologia(@RequestBody TecnologiaRequestDTO dto) {
         return postCadastrarTecnologiaUseCase.execute(dto);
     }
     
