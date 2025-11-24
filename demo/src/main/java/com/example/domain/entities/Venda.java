@@ -23,9 +23,7 @@ public class Venda {
     
     private Boolean removida;
     
-    public Venda() {
-        this.removida = false;
-    }
+    public Venda() {}
     
     public Venda(Long num, Tecnologia tecnologia, Comprador comprador) {
         this.num = num;
