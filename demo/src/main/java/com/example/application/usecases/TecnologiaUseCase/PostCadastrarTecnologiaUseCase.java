@@ -29,10 +29,8 @@ public class PostCadastrarTecnologiaUseCase {
         if (fornecedor == null)
             return false;
 
-        // Impede ID duplicado
-        if (tecnologiaRepo.existsById(dto.id)) {
+        if (tecnologiaRepo.existsById(dto.id)) 
             return false;
-        }
 
         Tecnologia tecnologia = new Tecnologia(
             dto.id,
