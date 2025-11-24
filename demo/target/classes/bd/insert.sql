@@ -16,10 +16,10 @@ INSERT INTO fornecedor (cod, data_fundacao, area) VALUES
 (4, '1995-07-16', 'ANDROIDES');
 
 -- COMPRADORES (referenciam participante.cod)
-INSERT INTO comprador (cod) VALUES
-(10),
-(20),
-(30);
+INSERT INTO comprador (cod, email, pais) VALUES
+(10, 'batman@gotham.com', 'Gotham'),
+(20, 'superman@krypton.com', 'Krypton'),
+(30, 'coringa@caos.com', 'Canada');
 
 -- TECNOLOGIAS
 INSERT INTO tecnologia (id, modelo, descricao, valor_base, peso, temperatura, fornecedor_cod) VALUES
@@ -31,10 +31,10 @@ INSERT INTO tecnologia (id, modelo, descricao, valor_base, peso, temperatura, fo
 (6, 'T-800', 'Modelo de androide autônomo', 80000.00, 400.0, 100.0, 4);
 
 -- VENDAS
-INSERT INTO venda (num, tecnologia_id, comprador_cod, removida) VALUES
-(1, 1, 10, false),
-(2, 2, 10, false),
-(3, 5, 10, false),
-(4, 3, 20, false),
-(5, 4, 20, false),
-(6, 6, 30, false);
+INSERT INTO venda (num, data, valor_final, tecnologia_id, comprador_cod, removida) VALUES
+(1, '2025-01-10', 12000.50, 1, 10, false),
+(2, '2025-01-11', 18500.00, 2, 10, false),
+(3, '2025-01-12',  9500.00, 5, 10, false),
+(4, '2025-02-01', 21000.99, 3, 20, false),
+(5, '2025-02-02', 31000.10, 4, 20, false),
+(6, '2025-02-03', 15000.75, 6, 30, false);
