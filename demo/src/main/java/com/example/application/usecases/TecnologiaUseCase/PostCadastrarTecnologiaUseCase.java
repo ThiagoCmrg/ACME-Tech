@@ -29,8 +29,13 @@ public class PostCadastrarTecnologiaUseCase {
         if (fornecedor == null)
             return false;
 
+        // Impede ID duplicado
+        if (tecnologiaRepo.existsById(dto.id)) {
+            return false;
+        }
+
         Tecnologia tecnologia = new Tecnologia(
-            null,
+            dto.id,
             dto.modelo,
             dto.descricao,
             dto.valorBase,
@@ -40,8 +45,8 @@ public class PostCadastrarTecnologiaUseCase {
         );
 
         tecnologiaRepo.save(tecnologia);
-
         return true;
     }
+
 
 }
