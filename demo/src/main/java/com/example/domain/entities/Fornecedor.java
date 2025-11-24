@@ -5,45 +5,23 @@ import com.example.domain.entities.enums.Area;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "fornecedor")
-public class Fornecedor {
+public class Fornecedor extends Participante {
 
-    @Id
-    private Long cod; 
-
-    private String nome;
     private String data_fundacao;
-    
+
     @Enumerated(EnumType.STRING)
     private Area area;
 
     public Fornecedor() {}
 
     public Fornecedor(Long cod, String nome, String data_fundacao, Area area) {
-        this.cod = cod;
-        this.nome = nome;
+        super(cod, nome);
         this.data_fundacao = data_fundacao;
         this.area = area;
-    }
-
-    public Long getCod() {
-        return cod;
-    }
-
-    public void setCod(Long cod) {
-        this.cod = cod;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     public String getData_fundacao() {

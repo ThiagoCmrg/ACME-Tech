@@ -29,10 +29,8 @@ public class PostCadastrarTecnologiaUseCase {
         if (fornecedor == null)
             return false;
 
-        //TODO: remover possibilidade de cadastrar com ID no DTO.
-
         Tecnologia tecnologia = new Tecnologia(
-            dto.id,
+            null,
             dto.modelo,
             dto.descricao,
             dto.valorBase,
@@ -45,4 +43,5 @@ public class PostCadastrarTecnologiaUseCase {
 
         return true;
     }
+
 }
