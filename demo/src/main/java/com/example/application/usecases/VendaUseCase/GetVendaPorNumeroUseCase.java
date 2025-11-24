@@ -5,14 +5,14 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.example.domain.entities.Venda;
-import com.example.infrastructure.repositories.VendaRepository;
+import com.example.infrastructure.repositories.VendaJPARepository;
 
 @Service
 public class GetVendaPorNumeroUseCase {
     
-    private final VendaRepository vendaRepository;
+    private final VendaJPARepository vendaRepository;
     
-    public GetVendaPorNumeroUseCase(VendaRepository vendaRepository) {
+    public GetVendaPorNumeroUseCase(VendaJPARepository vendaRepository) {
         this.vendaRepository = vendaRepository;
     }
     
