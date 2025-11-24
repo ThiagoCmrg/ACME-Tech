@@ -6,14 +6,14 @@ import org.springframework.stereotype.Service;
 
 import com.example.domain.entities.Venda;
 import com.example.domain.entities.enums.Area;
-import com.example.infrastructure.repositories.VendaRepository;
+import com.example.infrastructure.repositories.VendaJPARepository;
 
 @Service
 public class CalcularValorFinalVendaUseCase {
     
-    private final VendaRepository vendaRepository;
+    private final VendaJPARepository vendaRepository;
     
-    public CalcularValorFinalVendaUseCase(VendaRepository vendaRepository) {
+    public CalcularValorFinalVendaUseCase(VendaJPARepository vendaRepository) {
         this.vendaRepository = vendaRepository;
     }
     
