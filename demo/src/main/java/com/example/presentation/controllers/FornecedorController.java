@@ -1,20 +1,24 @@
 package com.example.presentation.controllers;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+import com.example.application.usecases.FornecedorUseCase.GetAllFornecedoresUseCase;
 import com.example.domain.entities.Fornecedor;
-import com.example.infrastructure.repositories.FornecedorJPARepository;
 
+@RestController
 public class FornecedorController {
 
-    private final FornecedorJPARepository repo;
+    private final GetAllFornecedoresUseCase getAllFornecedoresUseCase;
 
-    public FornecedorController(FornecedorJPARepository repo) {
-        this.repo = repo;
+    public FornecedorController(GetAllFornecedoresUseCase getAllFornecedoresUseCase) {
+        this.getAllFornecedoresUseCase = getAllFornecedoresUseCase;
     }
-    
+
     @GetMapping("/listarfornecedores")
     public List<Fornecedor> listarTodos() {
-        return repo.findAll();
+        return getAllFornecedoresUseCase.getAllFornecedores();
     }
 }
