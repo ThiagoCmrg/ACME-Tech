@@ -23,6 +23,13 @@ public class Fornecedor {
 
     public Fornecedor() {}
 
+    public Fornecedor(Long cod, String nome, String data_fundacao, Area area) {
+        this.cod = cod;
+        this.nome = nome;
+        this.data_fundacao = data_fundacao;
+        this.area = area;
+    }
+
     public Long getCod() {
         return cod;
     }
