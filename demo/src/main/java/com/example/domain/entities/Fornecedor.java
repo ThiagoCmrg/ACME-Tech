@@ -1,6 +1,10 @@
 package com.example.domain.entities;
 
+import com.example.domain.entities.enums.Area;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -13,7 +17,9 @@ public class Fornecedor {
 
     private String nome;
     private String data_fundacao;
-    private String area;
+    
+    @Enumerated(EnumType.STRING)
+    private Area area;
 
     public Fornecedor() {}
 
@@ -41,11 +47,11 @@ public class Fornecedor {
         this.data_fundacao = data_fundacao;
     }
 
-    public String getArea() {
+    public Area getArea() {
         return area;
     }
 
-    public void setArea(String area) {
+    public void setArea(Area area) {
         this.area = area;
     }
 }

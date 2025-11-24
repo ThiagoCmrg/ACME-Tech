@@ -1,22 +1,15 @@
 package com.example.presentation.controllers;
 
-import java.util.List;
-
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.example.domain.entities.Fornecedor;
-import com.example.infrastructure.repositories.FornecedorRepository;
+import com.example.infrastructure.repositories.FornecedorJPARepository;
 
-
-@RestController
-@RequestMapping("/acmetech")
 public class FornecedorController {
 
-    private final FornecedorRepository repo;
+    private final FornecedorJPARepository repo;
 
-    public FornecedorController(FornecedorRepository repo) {
+    public FornecedorController(FornecedorJPARepository repo) {
         this.repo = repo;
     }
     
