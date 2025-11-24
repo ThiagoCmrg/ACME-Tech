@@ -16,7 +16,7 @@ public class GetAllVendasUseCase {
         this.vendaRepository = vendaRepository;
     }
     
-    public List<Venda> getAllVendas(){
-        return vendaRepository.findAll();
+    public List<Venda> execute(){
+        return vendaRepository.findByRemovidaFalse();
     }
 }

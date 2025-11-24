@@ -16,7 +16,7 @@ public class GetAllTecnologiasUseCase {
         this.tecnologiaRepository = tecnologiaRepository;
     }
 
-    public List<Tecnologia> getAllTecnologias() {
+    public List<Tecnologia> execute() {
         return tecnologiaRepository.findAll();
     }
 }

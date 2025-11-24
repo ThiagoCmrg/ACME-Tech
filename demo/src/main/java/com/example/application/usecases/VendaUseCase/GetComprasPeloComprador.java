@@ -17,7 +17,7 @@ public class GetComprasPeloComprador {
     }
     
     public List<Venda> execute(Long codComprador) {
-        return vendaRepository.findByCompradorCod(codComprador);
+        return vendaRepository.findByCompradorCodAndRemovidaFalse(codComprador);
     }
     
 }

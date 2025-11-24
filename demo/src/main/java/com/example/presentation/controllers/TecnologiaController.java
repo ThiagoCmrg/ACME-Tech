@@ -39,7 +39,7 @@ public class TecnologiaController {
 
     @GetMapping("/listartecnologias")
     public List<Tecnologia> listaTecnologias() {
-        return getAllTecnologiasUseCase.getAllTecnologias();
+        return getAllTecnologiasUseCase.execute();
     }
 
     @GetMapping("/tecnologiaspelofornecedor/{cod}")
