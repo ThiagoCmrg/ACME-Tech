@@ -14,7 +14,7 @@ public class GetTecnologiaUseCase {
         this.tecnologiaRepository = tecnologiaRepository;
     }
 
-    public Tecnologia getTecnologiaById(Long id) {
+    public Tecnologia execute(Long id) {
         return tecnologiaRepository.findById(id).orElse(null);
     }
 }

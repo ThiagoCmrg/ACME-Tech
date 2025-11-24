@@ -16,7 +16,7 @@ public class GetAllFornecedoresUseCase {
         this.repo = repo;
     }
 
-    public List<Fornecedor> getAllFornecedores() {
+    public List<Fornecedor> execute() {
         return repo.findAll();
     }
 }

@@ -24,7 +24,7 @@ public class CompradorController {
 
     @GetMapping("/listarcompradores")
     public List<Comprador> listarTodos() {
-        return getAllCompradoresUseCase.getAllCompradores();
+        return getAllCompradoresUseCase.execute();
     }
 
     @GetMapping("/compradores/{cod}/compras")

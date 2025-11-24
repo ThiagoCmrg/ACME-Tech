@@ -29,7 +29,10 @@ public class PostCadastrarTecnologiaUseCase {
         if (fornecedor == null)
             return false;
 
-        //TODO: remover possibilidade de cadastrar com ID no DTO.
+        // Impede ID duplicado
+        if (tecnologiaRepo.existsById(dto.id)) {
+            return false;
+        }
 
         Tecnologia tecnologia = new Tecnologia(
             dto.id,
@@ -42,7 +45,8 @@ public class PostCadastrarTecnologiaUseCase {
         );
 
         tecnologiaRepo.save(tecnologia);
-
         return true;
     }
+
+
 }

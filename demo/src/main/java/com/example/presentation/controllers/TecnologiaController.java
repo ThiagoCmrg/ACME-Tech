@@ -34,7 +34,7 @@ public class TecnologiaController {
 
     @GetMapping("/buscatecnologia/{id}")
     public Tecnologia getTecnologia(@PathVariable Long id) {
-        return getTecnologiaUseCase.getTecnologiaById(id);
+        return getTecnologiaUseCase.execute(id);
     }
 
     @GetMapping("/listartecnologias")
@@ -44,7 +44,7 @@ public class TecnologiaController {
 
     @GetMapping("/tecnologiaspelofornecedor/{cod}")
     public List<Tecnologia> getMethodName(@PathVariable Long cod) {
-        return getTecnologiasPeloFornecedorUseCase.getTecnologiaByFornecedorCod(cod);
+        return getTecnologiasPeloFornecedorUseCase.execute(cod);
     }
 
     @PostMapping("/cadastrartecnologia")

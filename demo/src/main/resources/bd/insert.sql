@@ -1,9 +1,25 @@
--- FORNECEDORES
-INSERT INTO fornecedor (cod, nome, data_fundacao, area) VALUES
-(1, 'Stark Industries', '2000-03-01', 'TI'),
-(2, 'Wayne Enterprises', '1998-10-10', 'EMERGENTE'),
-(3, 'Umbrella Corporation', '2010-05-05', 'ALIMENTOS'),
-(4, 'Cyberdyne Systems', '1995-07-16', 'ANDROIDES');
+-- PARTICIPANTES
+INSERT INTO participante (cod, nome) VALUES
+(1, 'Stark Industries'),
+(2, 'Wayne Enterprises'),
+(3, 'Umbrella Corporation'),
+(4, 'Cyberdyne Systems'),
+(10, 'Batman'),
+(20, 'Superman'),
+(30, 'Coringa');
+
+-- FORNECEDORES (referenciam participante.cod)
+INSERT INTO fornecedor (cod, data_fundacao, area) VALUES
+(1, '2000-03-01', 'TI'),
+(2, '1998-10-10', 'EMERGENTE'),
+(3, '2010-05-05', 'ALIMENTOS'),
+(4, '1995-07-16', 'ANDROIDES');
+
+-- COMPRADORES (referenciam participante.cod)
+INSERT INTO comprador (cod) VALUES
+(10),
+(20),
+(30);
 
 -- TECNOLOGIAS
 INSERT INTO tecnologia (id, modelo, descricao, valor_base, peso, temperatura, fornecedor_cod) VALUES
@@ -14,17 +30,11 @@ INSERT INTO tecnologia (id, modelo, descricao, valor_base, peso, temperatura, fo
 (5, 'T-VIRUS', 'Agente biológico experimental', 12000.00, 10.0, -10.0, 3),
 (6, 'T-800', 'Modelo de androide autônomo', 80000.00, 400.0, 100.0, 4);
 
--- COMPRADORES
-INSERT INTO comprador (cod, nome, email, pais) VALUES
-(1, 'Batman', 'batman@email.com', 'Brasil'),
-(2, 'Superman', 'superman@email.com', 'Estados Unidos'),
-(3, 'Coringa', 'coringa@email.com' ,'Australia');
-
 -- VENDAS
 INSERT INTO venda (num, tecnologia_id, comprador_cod, removida) VALUES
-(1, 1, 1, false),
-(2, 2, 1, false),
-(3, 5, 1, false),
-(4, 3, 2, false),
-(5, 4, 2, false),
-(6, 6, 3, false);
+(1, 1, 10, false),
+(2, 2, 10, false),
+(3, 5, 10, false),
+(4, 3, 20, false),
+(5, 4, 20, false),
+(6, 6, 30, false);
