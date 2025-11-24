@@ -15,10 +15,10 @@ INSERT INTO tecnologia (id, modelo, descricao, valor_base, peso, temperatura, fo
 (6, 'T-800', 'Modelo de androide autônomo', 80000.00, 400.0, 100.0, 4);
 
 -- COMPRADORES
-INSERT INTO comprador (cod, nome) VALUES
-(1, 'Batman'),
-(2, 'Superman'),
-(3, 'Coringa');
+INSERT INTO comprador (cod, nome, email, pais) VALUES
+(1, 'Batman', 'batman@email.com', 'Brasil'),
+(2, 'Superman', 'superman@email.com', 'Estados Unidos'),
+(3, 'Coringa', 'coringa@email.com' ,'Australia');
 
 -- VENDAS
 INSERT INTO venda (num, tecnologia_id, comprador_cod, removida) VALUES
