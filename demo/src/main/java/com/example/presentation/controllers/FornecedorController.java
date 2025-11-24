@@ -19,7 +19,7 @@ public class FornecedorController {
     public FornecedorController(FornecedorRepository repo) {
         this.repo = repo;
     }
-
+    
     @GetMapping("/listarfornecedores")
     public List<Fornecedor> listarTodos() {
         return repo.findAll();
