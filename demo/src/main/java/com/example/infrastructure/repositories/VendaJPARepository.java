@@ -11,7 +11,9 @@ import com.example.domain.entities.Venda;
 
 public interface VendaJPARepository extends JpaRepository<Venda, Long> {
 
-    List<Venda> findByCompradorCod(Long cod);
+    List<Venda> findByRemovidaFalse();
+    List<Venda> findByCompradorCodAndRemovidaFalse(Long cod);
+
     
     @Query("SELECT COUNT(v) FROM Venda v WHERE v.comprador.cod = :compradorCod AND v.num < :numVendaAtual")
     long countVendasAnterioresPorComprador(@Param("compradorCod") Long compradorCod, @Param("numVendaAtual") Long numVendaAtual);
