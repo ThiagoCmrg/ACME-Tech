@@ -19,6 +19,6 @@ public class FornecedorController {
 
     @GetMapping("/listarfornecedores")
     public List<Fornecedor> listarTodos() {
-        return getAllFornecedoresUseCase.getAllFornecedores();
+        return getAllFornecedoresUseCase.execute();
     }
 }

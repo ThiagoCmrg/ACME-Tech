@@ -16,7 +16,7 @@ public class GetTecnologiasPeloFornecedorUseCase {
         this.tecnologiaRepository = tecnologiaRepository;
     }
 
-    public List<Tecnologia> getTecnologiaByFornecedorCod(Long fornecedorCod) {
+    public List<Tecnologia> execute(Long fornecedorCod) {
         return tecnologiaRepository.findByFornecedorCod(fornecedorCod);
     }
     
