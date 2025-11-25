@@ -38,6 +38,9 @@ public class PostCadastrarVendaUseCase {
             if (comprador == null)
                 return false;
 
+            if (vendaRepo.existsById(dto.num)) 
+                return false;
+
             var sdf = new SimpleDateFormat("yyyy-MM-dd");
             var data = sdf.parse(dto.data);
 
