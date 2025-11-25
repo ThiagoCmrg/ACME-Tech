@@ -39,6 +39,7 @@ public class CalcularValorFinalVendaUseCase {
             throw new RuntimeException("Venda " + numVenda + " não possui comprador associado");
         }
         
+        //TODO: mover lógica de negócio para a domain service
         Double valorBase = venda.getTecnologia().getValorBase();
         Area area = venda.getTecnologia().getFornecedor().getArea();
         
