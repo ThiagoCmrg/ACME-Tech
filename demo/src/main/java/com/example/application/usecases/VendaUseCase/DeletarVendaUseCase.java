@@ -1,24 +1,23 @@
 package com.example.application.usecases.VendaUseCase;
 
 import java.util.Optional;
-
 import org.springframework.stereotype.Service;
 
 import com.example.domain.entities.Venda;
-import com.example.infrastructure.repositories.VendaJPARepository;
+import com.example.domain.interfaces.VendaRepository;
 
 @Service
 public class DeletarVendaUseCase {
     
-    private final VendaJPARepository vendaRepository;
+    private final VendaRepository vendaRepository;
 
-    public DeletarVendaUseCase(VendaJPARepository vendaRepository) {
+    public DeletarVendaUseCase(VendaRepository vendaRepository) {
         this.vendaRepository = vendaRepository;
     }
 
     public boolean execute(Long numVenda) {
 
-        Optional<Venda> opt = vendaRepository.findById(numVenda);
+        Optional<Venda> opt = vendaRepository.findByIdWithRelations(numVenda);
 
         if (opt.isEmpty())
             return false;
@@ -33,5 +32,4 @@ public class DeletarVendaUseCase {
 
         return true;
     }
-
 }

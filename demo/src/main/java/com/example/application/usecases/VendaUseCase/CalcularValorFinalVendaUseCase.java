@@ -6,15 +6,15 @@ import org.springframework.stereotype.Service;
 
 import com.example.domain.entities.Venda;
 import com.example.domain.services.VendaService;
-import com.example.infrastructure.repositories.VendaJPARepository;
+import com.example.domain.interfaces.VendaRepository;
 
 @Service
 public class CalcularValorFinalVendaUseCase {
     
-    private final VendaJPARepository vendaRepository;
+    private final VendaRepository vendaRepository;
     private final VendaService vendaService;
 
-    public CalcularValorFinalVendaUseCase(VendaJPARepository vendaRepository) {
+    public CalcularValorFinalVendaUseCase(VendaRepository vendaRepository) {
         this.vendaRepository = vendaRepository;
         this.vendaService = new VendaService();
     }
@@ -28,7 +28,7 @@ public class CalcularValorFinalVendaUseCase {
 
         Venda venda = vendaOpt.get();
 
-        long vendasAnteriores = vendaRepository.countVendasAnterioresPorComprador(
+        long vendasAnteriores = vendaRepository.countVendasAnteriores(
             venda.getComprador().getCod(),
             numVenda
         );

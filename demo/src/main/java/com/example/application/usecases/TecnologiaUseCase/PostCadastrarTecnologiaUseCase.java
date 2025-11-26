@@ -4,18 +4,18 @@ import org.springframework.stereotype.Service;
 
 import com.example.application.DTO.TecnologiaRequestDTO;
 import com.example.domain.entities.Tecnologia;
-import com.example.infrastructure.repositories.FornecedorJPARepository;
-import com.example.infrastructure.repositories.TecnologiaJPARepository;
+import com.example.domain.interfaces.FornecedorRepository;
+import com.example.domain.interfaces.TecnologiaRepository;
 
 @Service
 public class PostCadastrarTecnologiaUseCase {
 
-    private final TecnologiaJPARepository tecnologiaRepo;
-    private final FornecedorJPARepository fornecedorRepo;
+    private final TecnologiaRepository tecnologiaRepo;
+    private final FornecedorRepository fornecedorRepo;
 
     public PostCadastrarTecnologiaUseCase(
-            TecnologiaJPARepository tecnologiaRepo,
-            FornecedorJPARepository fornecedorRepo) {
+            TecnologiaRepository tecnologiaRepo,
+            FornecedorRepository fornecedorRepo) {
 
         this.tecnologiaRepo = tecnologiaRepo;
         this.fornecedorRepo = fornecedorRepo;

@@ -4,22 +4,22 @@ import org.springframework.stereotype.Service;
 
 import com.example.application.DTO.CompradorRequestDTO;
 import com.example.domain.entities.Comprador;
-import com.example.infrastructure.repositories.CompradorJPARepository;
+import com.example.domain.interfaces.CompradorRepository;
 
 @Service
 public class PutEditarCompradorUseCase {
 
-    private final CompradorJPARepository compradorRepo;
+    private final CompradorRepository repo;
 
-    public PutEditarCompradorUseCase(CompradorJPARepository compradorRepo) {
-        this.compradorRepo = compradorRepo;
+    public PutEditarCompradorUseCase(CompradorRepository repo) {
+        this.repo = repo;
     }
 
     public boolean execute(CompradorRequestDTO dto) {
 
         if (dto.cod == null) return false;
 
-        var opt = compradorRepo.findById(dto.cod);
+        var opt = repo.findById(dto.cod);
         if (opt.isEmpty()) return false;
 
         Comprador comprador = opt.get();
@@ -27,7 +27,7 @@ public class PutEditarCompradorUseCase {
         comprador.setEmail(dto.email);
         comprador.setPais(dto.pais);
 
-        compradorRepo.save(comprador);
+        repo.save(comprador);
         return true;
     }
 }

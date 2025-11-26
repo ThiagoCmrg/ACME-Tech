@@ -6,21 +6,21 @@ import org.springframework.stereotype.Service;
 
 import com.example.application.DTO.VendaRequestDTO;
 import com.example.domain.entities.Venda;
-import com.example.infrastructure.repositories.CompradorJPARepository;
-import com.example.infrastructure.repositories.TecnologiaJPARepository;
-import com.example.infrastructure.repositories.VendaJPARepository;
+import com.example.domain.interfaces.CompradorRepository;
+import com.example.domain.interfaces.TecnologiaRepository;
+import com.example.domain.interfaces.VendaRepository;
 
 @Service
 public class PostCadastrarVendaUseCase {
 
-    private final VendaJPARepository vendaRepo;
-    private final TecnologiaJPARepository tecnologiaRepo;
-    private final CompradorJPARepository compradorRepo;
+    private final VendaRepository vendaRepo;
+    private final TecnologiaRepository tecnologiaRepo;
+    private final CompradorRepository compradorRepo;
 
     public PostCadastrarVendaUseCase(
-        VendaJPARepository vendaRepo,
-        TecnologiaJPARepository tecnologiaRepo,
-        CompradorJPARepository compradorRepo
+        VendaRepository vendaRepo,
+        TecnologiaRepository tecnologiaRepo,
+        CompradorRepository compradorRepo
     ) {
         this.vendaRepo = vendaRepo;
         this.tecnologiaRepo = tecnologiaRepo;
@@ -30,16 +30,17 @@ public class PostCadastrarVendaUseCase {
     public boolean execute(VendaRequestDTO dto) {
         try {
 
-            var tecnologia = tecnologiaRepo.findById(dto.tecnologiaId).orElse(null);
-            if (tecnologia == null)
+            var tecnologiaOpt = tecnologiaRepo.findById(dto.tecnologiaId);
+            if (tecnologiaOpt.isEmpty())
                 return false;
 
-            var comprador = compradorRepo.findById(dto.compradorCod).orElse(null);
-            if (comprador == null)
+            var compradorOpt = compradorRepo.findById(dto.compradorCod);
+            if (compradorOpt.isEmpty())
                 return false;
 
-            if (vendaRepo.existsById(dto.num)) 
+            if (vendaRepo.existsById(dto.num)) {
                 return false;
+            }
 
             var sdf = new SimpleDateFormat("yyyy-MM-dd");
             var data = sdf.parse(dto.data);
@@ -48,8 +49,8 @@ public class PostCadastrarVendaUseCase {
                 dto.num,
                 data,
                 dto.valorFinal,
-                tecnologia,
-                comprador
+                tecnologiaOpt.get(), 
+                compradorOpt.get()    
             );
 
             vendaRepo.save(venda);
@@ -59,5 +60,4 @@ public class PostCadastrarVendaUseCase {
             return false;
         }
     }
-    
 }

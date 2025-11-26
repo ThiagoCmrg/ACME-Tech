@@ -5,14 +5,14 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.example.domain.entities.Comprador;
-import com.example.infrastructure.repositories.CompradorJPARepository;
+import com.example.domain.interfaces.CompradorRepository;
 
 @Service
 public class GetAllCompradoresUseCase {
 
-    private final CompradorJPARepository repo;
+    private final CompradorRepository repo;
 
-    public GetAllCompradoresUseCase(CompradorJPARepository repo) {
+    public GetAllCompradoresUseCase(CompradorRepository repo) {
         this.repo = repo;
     }
 
