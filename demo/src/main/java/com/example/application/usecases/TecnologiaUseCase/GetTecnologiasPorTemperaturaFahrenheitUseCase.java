@@ -7,14 +7,14 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.example.domain.entities.Tecnologia;
-import com.example.infrastructure.repositories.TecnologiaJPARepository;
+import com.example.domain.interfaces.TecnologiaRepository;
 
 @Service
 public class GetTecnologiasPorTemperaturaFahrenheitUseCase {
-    private final TecnologiaJPARepository tecnologiaRepo;
+    private final TecnologiaRepository tecnologiaRepo;
     private final RestTemplate restTemplate;
 
-    public GetTecnologiasPorTemperaturaFahrenheitUseCase(TecnologiaJPARepository tecnologiaRepo) {
+    public GetTecnologiasPorTemperaturaFahrenheitUseCase(TecnologiaRepository tecnologiaRepo) {
         this.tecnologiaRepo = tecnologiaRepo;
         this.restTemplate = new RestTemplate();
     }

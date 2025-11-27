@@ -3,14 +3,14 @@ package com.example.application.usecases.TecnologiaUseCase;
 import org.springframework.stereotype.Service;
 
 import com.example.domain.entities.Tecnologia;
-import com.example.infrastructure.repositories.TecnologiaJPARepository;
+import com.example.domain.interfaces.TecnologiaRepository;
 
 @Service
 public class GetTecnologiaUseCase {
 
-    private final TecnologiaJPARepository tecnologiaRepository;
+    private final TecnologiaRepository tecnologiaRepository;
 
-    public GetTecnologiaUseCase(TecnologiaJPARepository tecnologiaRepository) {
+    public GetTecnologiaUseCase(TecnologiaRepository tecnologiaRepository) {
         this.tecnologiaRepository = tecnologiaRepository;
     }
 

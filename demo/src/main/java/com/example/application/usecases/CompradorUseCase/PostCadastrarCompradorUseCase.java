@@ -4,20 +4,20 @@ import org.springframework.stereotype.Service;
 
 import com.example.application.DTO.CompradorRequestDTO;
 import com.example.domain.entities.Comprador;
-import com.example.infrastructure.repositories.CompradorJPARepository;
+import com.example.domain.interfaces.CompradorRepository;
 
 @Service
 public class PostCadastrarCompradorUseCase {
 
-    private final CompradorJPARepository compradorRepo;
+    private final CompradorRepository repo;
 
-    public PostCadastrarCompradorUseCase(CompradorJPARepository compradorRepo) {
-        this.compradorRepo = compradorRepo;
+    public PostCadastrarCompradorUseCase(CompradorRepository repo) {
+        this.repo = repo;
     }
 
     public boolean execute(CompradorRequestDTO dto) {
 
-        if (dto.cod != null && compradorRepo.existsById(dto.cod))
+        if (dto.cod != null && repo.existsById(dto.cod))
             return false;
 
         Comprador comprador = new Comprador(
@@ -27,9 +27,7 @@ public class PostCadastrarCompradorUseCase {
             dto.pais
         );
 
-        compradorRepo.save(comprador);
-
+        repo.save(comprador);
         return true;
     }
-    
 }

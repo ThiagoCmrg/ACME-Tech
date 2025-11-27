@@ -3,20 +3,19 @@ package com.example.application.usecases.VendaUseCase;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
-
 import com.example.domain.entities.Venda;
-import com.example.infrastructure.repositories.VendaJPARepository;
+import com.example.domain.interfaces.VendaRepository;
 
 @Service
 public class GetAllVendasUseCase {
     
-    private final VendaJPARepository vendaRepository;
+    private final VendaRepository vendaRepository;
     
-    public GetAllVendasUseCase(VendaJPARepository vendaRepository) {
+    public GetAllVendasUseCase(VendaRepository vendaRepository) {
         this.vendaRepository = vendaRepository;
     }
     
     public List<Venda> execute(){
-        return vendaRepository.findByRemovidaFalse();
+        return vendaRepository.findAllActive();
     }
 }
